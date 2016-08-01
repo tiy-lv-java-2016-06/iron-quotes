@@ -1,5 +1,7 @@
 # Iron Quotes
 
+![motiviation](motivation.jpg)
+
 ## Description
 So many funny things are said here at our school lets create a rest api to catalog them all.  This project will be pretty simple and focus on bi-directional relationships in the system. You may use templates for this project instead of the JQuery of previous projects. 
 
