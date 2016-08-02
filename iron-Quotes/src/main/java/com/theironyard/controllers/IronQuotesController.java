@@ -93,7 +93,7 @@ public class IronQuotesController {
     }
 
     @RequestMapping(path = "/quotes/{quoteId}/tags/{tagId}",method = RequestMethod.DELETE)
-    public void deleteTag(@PathVariable Integer quoteId, @PathVariable Integer tagId) throws Exception {
+    public void deleteTag(@PathVariable Integer quoteId, @PathVariable Integer tagId){
         Quote quote = quoteRepository.findOne(quoteId);
         quote.deleteTag(tagRepository.getOne(tagId));
         quoteRepository.save(quote);
