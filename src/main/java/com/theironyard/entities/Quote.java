@@ -21,13 +21,13 @@ public class Quote {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(nullable = false)
     private String quote;
 
-    @Column
+    @Column(nullable = false)
     private String author;
 
-    @Column
+    @Column(nullable = false)
     @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime dateCreated = LocalDateTime.now();
 

@@ -75,7 +75,7 @@ public class IronQuotesController {
         return tagRepository.findAll();
     }
 
-    @RequestMapping(path = "/update/quotes/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/quotes/{id}", method = RequestMethod.PUT)
     public Quote updateQuote(@PathVariable int id, @RequestBody QuoteCommand command) throws Exception {
 
         Quote updateQuote = quoteRepository.getOne(id);
@@ -89,7 +89,7 @@ public class IronQuotesController {
         return updateQuote;
     }
 
-    @RequestMapping(path = "/update/tags/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/tags/{id}", method = RequestMethod.PUT)
     public Tag updateTag(@PathVariable int id, @RequestBody TagCommand command) throws Exception {
 
         Tag updateTag = tagRepository.getOne(id);
@@ -102,7 +102,7 @@ public class IronQuotesController {
         return updateTag;
     }
 
-    @RequestMapping(path = "/delete/quotes/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/quotes/{id}", method = RequestMethod.DELETE)
     public void deleteQuote(@PathVariable int id) throws Exception {
 
         Quote quote = quoteRepository.getOne(id);
@@ -113,7 +113,7 @@ public class IronQuotesController {
         quoteRepository.delete(id);
     }
 
-    @RequestMapping(path = "/delete/tags/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/tags/{id}", method = RequestMethod.DELETE)
     public void deleteTags(@PathVariable int id) throws Exception {
 
         Tag tag = tagRepository.getOne(id);
