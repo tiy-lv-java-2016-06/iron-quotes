@@ -4,12 +4,12 @@ import com.theironyard.command.QuoteCommand;
 import com.theironyard.command.TagCommand;
 import com.theironyard.entities.Quote;
 import com.theironyard.entities.Tag;
+import com.theironyard.exceptions.QuoteDoesNotExist;
 import com.theironyard.services.QuoteRepository;
 import com.theironyard.services.TagRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -62,7 +62,7 @@ public class IronQuotesController {
     public void deleteQuote(@PathVariable Integer id) throws Exception {
         Quote deletedQuote = quoteRepository.findOne(id);
         if(deletedQuote == null){
-            throw new Exception("Quote does not exist");
+            throw new QuoteDoesNotExist();
         }
         quoteRepository.delete(deletedQuote);
     }
